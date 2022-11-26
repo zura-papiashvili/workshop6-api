@@ -6,7 +6,7 @@ import cors from "cors";
 
 // routes
 import userRoutes from "./routes/users.js";
-
+import todoRoutes from "./routes/todos.js";
 const app = express();
 // general middlewares
 app.use(bodyParser.json());
@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 // route middlewares
 app.use("/users", userRoutes);
+app.use("/todos", todoRoutes);
 
 dotenv.config();
 
