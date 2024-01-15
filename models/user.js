@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     ],
   },
   email: { type: String, required: true, validate: [validator.isEmail, "invalid email"] },
-  sex: { type: String, required: true },
+  // sex: { type: String, required: true },
   age: {
     type: Number,
     required: true,
