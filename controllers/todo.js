@@ -16,6 +16,16 @@ export const addTodo = async (req, res) => {
   } catch (error) {}
 };
 
+export const updateTodo = async (req, res) => {
+  const { id } = req.params;
+  const { title, completed } = req.body;
+  try {
+    await Todo.findOneAndUpdate({ _id: id }, { title, completed });
+    return res.json({ message: "user updated successfully" });
+  } catch (error) {}
+};
+
+
 export const deleteTodo = async (req, res) => {
   const { id } = req.params;
   try {
